@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raidhu Beiucy Duraisamy | Robotics Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2a5298;
+            --secondary-color: #e9ecef;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background-color: var(--primary-color);
+            transform: skewY(-1deg);
+            z-index: -1;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .navbar ul {
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 1.5rem;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hamburger Menu for Mobile */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background-color: #121212;
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            max-width: 100%;
+            border: 5px solid var(--primary-color);
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about p {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            background-color: var(--primary-color);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+
+        /* Experience Section */
+        .experience {
+            background-color: var(--secondary-color);
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 0.5rem auto;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: #fff;
+            border: 4px solid var(--primary-color);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .timeline-desc ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-desc li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 4rem 0;
+        }
+
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Education Section */
+        .education {
+            background-color: var(--secondary-color);
+            padding: 4rem 0;
+        }
+
+        .education-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .education-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .education-date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Awards Section */
+        .awards {
+            padding: 4rem 0;
+        }
+
+        .awards-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .award-item {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .award-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .award-date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--secondary-color);
+            padding: 4rem 0;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .contact-icon {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            width: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+            }
+
+            .navbar {
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+            }
+
+            .navbar.active {
+                height: 200px;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar ul li {
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-img {
+                width: 200px;
+                margin: 0 auto;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 20px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Raidhu <span>Duraisamy</span></h1>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Robotics Software Engineer</h2>
+                <p>Innovative Robotics Engineer specializing in AI-powered automation, with 4+ years of experience designing and deploying ROS-based robotic systems. Passionate about bridging the gap between machine intelligence and real-world applications.</p>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <img src="/api/placeholder/400/400" alt="Raidhu Beiucy Duraisamy" class="profile-img">
+                </div>
+                <div>
+                    <h2>About Me</h2>
+                    <p>Innovative Robotics Engineer specializing in AI-powered automation, with 4+ years of experience designing and deploying ROS-based robotic systems. Passionate about bridging the gap between machine intelligence and real-world applications, I thrive on solving complex challenges in perception, motion planning, and autonomous decision-making.</p>
+                    <p>Committed to advancing the future of robotics through human-centric AI integration and scalable automation solutions.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/raidhu/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/raidhu" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:raidhu1998@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">February 2022 - Present</div>
+                        <h3 class="timeline-title">Robotics Software Engineer, Deployment</h3>
+                        <div class="timeline-company">THE NOVUS HI-TECH ROBOTIC SYSTEMZ LTD</div>
+                        <div class="timeline-desc">
+                            <h4>Software Engineering</h4>
+                            <ul>
+                                <li>Wrote firmware for mobile robots in C/C++ and Python</li>
+                                <li>Implemented robot autonomy using ROS/ROS2 (including perception, planning, and control stacks)</li>
+                                <li>Containerized ROS nodes using Docker for modular deployment</li>
+                            </ul>
+                            <h4>Perception</h4>
+                            <ul>
+                                <li>Optimized RTAB-Map's loop closure detection for improved SLAM accuracy</li>
+                                <li>Enhanced memory management efficiency, reducing system overhead by implementing system logger</li>
+                                <li>Reduced computational load by optimizing real-time mapping parameters for large-scale environments</li>
+                            </ul>
+                            <h4>Navigation & Path Planning</h4>
+                            <ul>
+                                <li>Contributed to obstacle detection setup via lidar for collision-free navigation in dynamic environments</li>
+                                <li>Contributed to path planning algorithms, Linear Interpolation and Spline Interpolation</li>
+                            </ul>
+                            <h4>Integration</h4>
+                            <ul>
+                                <li>Integrated autonomous stacker robot with elevators/lifts via API communication</li>
+                                <li>Enhanced point cloud processing for pallet detection by minimizing noise using intensity-based filtering in ABOPT (Autonomous Battery-Operated Pallet Trucks)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">October 2020 - January 2022</div>
+                        <h3 class="timeline-title">Robotics Engineer</h3>
+                        <div class="timeline-company">UNIQUE INC, BANGALORE</div>
+                        <div class="timeline-desc">
+                            <ul>
+                                <li>Developed a ROS-based mobile robot for UV sanitization, automating disinfection processes in dynamic environments</li>
+                                <li>Designed a Python script to control UV lamps based on time intervals and waypoint locations, ensuring thorough coverage</li>
+                                <li>Integrated sensor fusion techniques (LiDAR, IMU, and depth cameras) to enhance localization accuracy and obstacle detection, enabling safe and efficient navigation</li>
+                                <li>Conducted system testing and validation to verify functionality and optimize performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <h3>Robotics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ROS/ROS2</span>
+                        <span class="skill-tag">Mobile Robots</span>
+                        <span class="skill-tag">SLAM</span>
+                        <span class="skill-tag">RTAB-Map</span>
+                        <span class="skill-tag">Path Planning</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">OOPS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Ubuntu</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Blender</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">Point Cloud</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tamil (Native)</span>
+                        <span class="skill-tag">English (Proficient)</span>
+                        <span class="skill-tag">Hindi (Basic)</span>
+                        <span class="skill-tag">Telugu (Basic)</span>
+                        <span class="skill-tag">German (Basic)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-cards">
+                <div class="education-card">
+                    <h3>Bachelor of Engineering in Mechatronics</h3>
+                    <p>Anna University Affiliated (K.S.R. College of Technology)</p>
+                    <div class="education-date">May 2016 - April 2020</div>
+                    <p>Final Grade: 6.69</p>
+                    <p><strong>Thesis:</strong> Wireless data transfer using WiFi module and MQTT protocol for IoT & robotics application</p>
+                    <p>Developed an IoT control system using ARM microcontroller and ESP8266 WiFi module to enable internet-based device control. Implemented ESP8266 libraries and MQTT cloud protocol for bidirectional data communication.</p>
+                </div>
+                <div class="education-card">
+                    <h3>Higher Secondary Education</h3>
+                    <p>Reliance Matriculation Higher Secondary School</p>
+                    <div class="education-date">March 2014 - May 2016</div>
+                </div>
+                <div class="education-card">
+                    <h3>Primary Education</h3>
+                    <p>Reliance Matriculation Higher Secondary School</p>
+                    <div class="education-date">February 2012 - February 2014</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards" id="awards">
+        <div class="container">
+            <h2 class="section-title">Honors & Awards</h2>
+            <div class="awards-list">
+                <div class="award-item">
+                    <h3>1st Place Winner, Line Follower Robotics Competition</h3>
+                    <div class="award-date">May 2019</div>
+                    <p>Bannari Amman Institute of Technology</p>
+                </div>
+                <div class="award-item">
+                    <h3>Event Organizer - Robo-Soccer Robotics Competition</h3>
+                    <div class="award-date">April 2019</div>
+                    <p>KSR College of Technology</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span>raidhu1998@gmail.com</span>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                        <span>(+91) 8667637796</span>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                        <span>(+91) 8667665900</span>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span>5/128, Sandhai medu, Seerampalayam, Namakkal, Tamil Nadu, 638008</span>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Professional Profiles</h3>
+                    <div class="contact-detail">
+                        <span class="contact-icon"><i class="fab fa-linkedin-in"></i></span>
+                        <a href="https://www.linkedin.com/in/raidhu/" target="_blank">linkedin.com/in/raidhu</a>
+                    </div>
+                    <div class="contact-detail">
+                        <span class="contact-icon"><i class="fab fa-github"></i></span>
+                        <a href="https://github.com/raidhu" target="_blank">github.com/raidhu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Raidhu Beiucy Duraisamy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navbar = document.querySelector('.navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu after click
+                if (navbar.classList.contains('active')) {
+                    navbar.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }
+            });
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>
